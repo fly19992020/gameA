@@ -8,6 +8,7 @@ addEventListener("keyup", function(e){delete keysDown[e.keyCode]});
 var x = 0;
 var y = 0;
 var score = 0;
+var speed = 5;
 
 var ball = function(){x = 0;y = 0};
 
@@ -54,7 +55,7 @@ var update = function(){
     for (i = 0;i < balls.length;i++)
     {
         ctx.arc(balls[i].x, balls[i].y, 20, 0, 2 * Math.PI);
-        balls[i].y += 1;
+        balls[i].y += speed;
         ctx.closePath();
         ctx.fill();
     }
@@ -76,6 +77,15 @@ var update = function(){
     if (keysDown[39] == true && x < (c.width - 200))
     {
         x += 10;
+    }
+
+    if (keysDown[38] == true && speed < 10)
+    {
+        speed += 0.5;
+    }
+    if (keysDown[40] == true && speed > 1)
+    {
+        speed -= 0.5;
     }
 
     for (i = 0;i < balls.length;i++)
