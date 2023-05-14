@@ -37,10 +37,10 @@ var colliderect = function(ax, ay, blx, brx, bty, bby){
 
 var start = function(){
     ctx.fillStyle = "#000000"
-    ctx.font = "24px Helvetica";
+    ctx.font = "48px Helvetica";
     ctx.textAlign = "left";
     ctx.textBaseLine = "top";
-    ctx.fillText("type space to start", 32, 32);
+    ctx.fillText("type space to start",430 , 290);
     if (keysDown[32] == true)
     {
         clearInterval(start_interval_ID);
